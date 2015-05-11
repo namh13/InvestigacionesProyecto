@@ -10,17 +10,18 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 /**
  * Created by turupawn on 4/29/15.
  */
-public class MiActor extends Image
+public class Start extends Image
 {
-    MiActor()
+    Start()
     {
-        super(new Texture("monstruo.png"));
+        super(new Texture("start.png"));
 
         addListener(new ClickListener() {
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                setX(getX() + 3);
                 super.touchDown(event, x, y, pointer, button);
-                MyGdxGame.EnviarServidor("TouchDown");
+                MyGdxGame.EnviarServidor("Inicio");
+                MyGdxGame.dibujo.setVisible(true);
+                setVisible(false);
                 return true;
             }
         });
